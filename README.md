@@ -1,2 +1,5 @@
 # muf-sample-unit
 MUF（Redisベースのユニット開発フレームワーク）のための、Webインターフェースを備えたサンプルユニットの実装リポジトリです。このプロジェクトは、FlaskまたはFastAPIを用いてブラウザからの入力を受け付け、Redisを介してMUF標準のecho-unitと通信し、その応答をリアルタイムに画面へ表示する一連のメッセージングサイクルを実証します
+
+## ユニット開発
+> git submodule add https://github.com/Masafuro/MUF.git muf

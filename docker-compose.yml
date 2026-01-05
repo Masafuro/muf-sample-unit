@@ -1,0 +1,3 @@
+# /docker-compose.yml
+include:
+  - path: muf/docker-compose.yml

@@ -35,6 +35,9 @@ https://github.com/Masafuro/MUF/tree/main
 - docker container 状況確認
 > docker ps
 
+- muf-networkの削除
+> docker network rm muf-network
+
 ## sample-unit動作確認
 
 - 実行

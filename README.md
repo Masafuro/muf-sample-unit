@@ -2,7 +2,12 @@
 MUF（Redisベースのユニット開発フレームワーク）のための、Webインターフェースを備えたサンプルユニットの実装リポジトリです。このプロジェクトは、FlaskまたはFastAPIを用いてブラウザからの入力を受け付け、Redisを介してMUF標準のecho-unitと通信し、その応答をリアルタイムに画面へ表示する一連のメッセージングサイクルを実証します
 
 ## 開発リファレンス
+
+- Pythonライブラリ　リファレンス
 https://github.com/Masafuro/MUF/blob/main/doc/unit_reference_v2.md
+
+- docker 及び設定情報　リファレンス
+https://github.com/Masafuro/MUF/blob/main/doc/custom-unit_reference.md
 
 ## MUF SDK及びコアユニット
 https://github.com/Masafuro/MUF/tree/main

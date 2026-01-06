@@ -4,6 +4,10 @@ MUF（Redisベースのユニット開発フレームワーク）のための、
 ## 開発リファレンス
 https://github.com/Masafuro/MUF/blob/main/doc/unit_reference_v2.md
 
+## MUF SDK及びコアユニット
+https://github.com/Masafuro/MUF/tree/main
+
+
 ## ユニット開発
 - submoduleとしてmufを引き込み
 > git submodule add https://github.com/Masafuro/MUF.git muf

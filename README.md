@@ -32,3 +32,14 @@ https://github.com/Masafuro/MUF/tree/main
 
 - docker container 状況確認
 > docker ps
+
+## sample-unit動作確認
+
+- 実行
+ルートディレクトリから
+> docker compose up
+ブラウザで`localhost:8000`にアクセスする。
+
+- 終了
+ctrl + C で終了し
+> docker compose down

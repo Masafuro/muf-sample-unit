@@ -1,3 +1,12 @@
+# muf-sample-unit
 # /docker-compose.yml
 include:
-  - path: muf/docker-compose.yml
+  # muf SDK 不要なものはコメントアウトする。
+  - muf/redis/docker-compose.yml
+  - muf/monitor/docker-compose.yml
+#  - muf/terminal/docker-compose.yml
+  - muf/echo-unit/docker-compose.yml
+#  - muf/check-unit/docker-compose.yml
+  
+  # sample-unit
+  - sample-unit/docker-compose.yml

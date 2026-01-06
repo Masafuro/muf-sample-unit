@@ -1,0 +1,23 @@
+# sample-unit/docker-compose.yml
+services:
+  muf-sample-unit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: muf-sample-unit
+    # ホストの8000番ポートをコンテナの8000番に繋ぎ、ブラウザアクセスを許可します
+    ports:
+      - "8000:8000"
+    volumes:
+      # サブモジュール（親ディレクトリ）のmufをSDKとしてマウント
+      - ../muf:/app/muf
+      # ユニット自身のソースコードをマウント
+      - .:/app/sample-unit
+    networks:
+      - muf-network
+    restart: always
+
+networks:
+  muf-network:
+    name: muf-network
+    # external: true をつかってはいけない。

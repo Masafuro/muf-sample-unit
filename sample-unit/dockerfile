@@ -1,0 +1,11 @@
+FROM python:3.11-alpine
+
+# Webサーバー、テンプレートエンジン、Redisライブラリをインストール
+RUN pip install redis fastapi uvicorn jinja2
+
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app/muf:/app
+
+# 起動コマンド
+CMD ["uvicorn", "sample-unit.main:app", "--host", "0.0.0.0", "--port", "8000"]

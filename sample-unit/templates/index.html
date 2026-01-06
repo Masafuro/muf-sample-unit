@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUF Console</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; padding: 50px; }
+        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        h1 { font-size: 1.5rem; color: #1c1e21; margin-bottom: 1.5rem; }
+        .input-group { display: flex; gap: 10px; margin-bottom: 1rem; }
+        input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { padding: 10px 20px; background-color: #0084ff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        #log { background: #18191a; color: #e4e6eb; padding: 1rem; border-radius: 5px; font-family: monospace; font-size: 0.9rem; min-height: 100px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>MUF Sample Unit</h1>
+        <div class="input-group">
+            <input type="text" id="content" placeholder="Enter message...">
+            <button onclick="send()">Send</button>
+        </div>
+        <div id="log">Waiting for response...</div>
+    </div>
+
+    <script>
+        async function send() {
+            const el = document.getElementById('content');
+            const log = document.getElementById('log');
+            const text = el.value;
+            if (!text) return;
+
+            log.innerText = "> Sending request...";
+            try {
+                const res = await fetch(`/send?content=${encodeURIComponent(text)}`);
+                const data = await res.json();
+                log.innerText = JSON.stringify(data, null, 2);
+            } catch (e) {
+                log.innerText = "> Error: Connection failed.";
+            }
+        }
+    </script>
+</body>
+</html>
